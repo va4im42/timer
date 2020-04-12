@@ -1,0 +1,16 @@
+import telebot
+import time
+
+bot = telebot.TeleBot('1152712355:AAHC_aKaUnlq0w2HL9cAveeA1FHgc2L50bc')
+
+
+@bot.message_handler(commands=['timer'])
+def start_message(message):
+    print('таймер запущен')
+    time.sleep(60)
+    bot.send_message(1127632517,'/tsec')
+    time.sleep(20)
+    bot.send_message(1127632517,'/endt')
+
+    
+bot.polling(none_stop=False, interval=0)
